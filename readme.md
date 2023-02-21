@@ -25,6 +25,4 @@
 <p> 🔰 Despues de clonar el repositorio hacer: <strong>cd backend</strong> , y despues:  <strong>npm install</strong>  </p>
 <p> 🔰 Para correr el Backend ejecutar el comando: <strong>npm run dev</strong> </p>
 
-<p>2023</p>
-
 
