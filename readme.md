@@ -23,4 +23,6 @@
 <p> - Para el frontend se usará toda la instalación de dependencias con el gestor de paquetes NPM. </p>
 <p> - Para correr el frontend ejecutar el comando: <strong>npm run dev</strong> </p>
 
+<p>2023</p>
+
 
