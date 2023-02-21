@@ -3,9 +3,11 @@
 #Desarrolladores:
 
 - Brayan Villamizar
-- Kevin Wifred Mejía Torres
+- Kevin Mejía
 - Natalia Villamizar
 - Vanessa Jaimes
+
+## <p> - Para clonar el proyecto ejecutar el comando: <strong>git clone https://github.com/kwmejia/Proyecto-Nuevas-Tecnologias.git</strong></p>
 
 ## Frontend - React
 
