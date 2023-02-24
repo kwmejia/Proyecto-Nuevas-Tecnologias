@@ -1,6 +1,6 @@
-##Proyecto Nuevas Tecnologias
+## Proyecto Nuevas Tecnologias
 
-#Desarrolladores:
+# Desarrolladores:
 
 - Brayan Villamizar
 - Kevin Mejía
