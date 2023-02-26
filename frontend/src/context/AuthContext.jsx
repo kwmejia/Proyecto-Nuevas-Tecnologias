@@ -1,5 +1,5 @@
 import { createContext, useState, useEffect } from 'react';
-import { gapi } from 'gapi-script';
+import jwt_decode from 'jwt-decode';
 
 export const AuthContext = createContext({});
 
@@ -10,12 +10,6 @@ export const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     if (localStorage.getItem("token")) loadInfo();
-    const start = () => {
-      gapi.auth2.init({
-        clientId: clientID,
-      });
-    }
-    gapi.load("client:auth2", start);
   }, []);
 
 
@@ -27,10 +21,11 @@ export const AuthProvider = ({ children }) => {
   }
 
   const onSuccess = (response) => {
-    setUser(response.profileObj);
-    localStorage.setItem("token", response.tokenId);
-    localStorage.setItem("user", JSON.stringify(response.profileObj));
-    document.getElementsByClassName("btn").hidden = true;
+    const decoded = jwt_decode(response.credential);
+    console.log(decoded)
+    setUser(decoded);
+    localStorage.setItem("token", response.credential);
+    localStorage.setItem("user", JSON.stringify(decoded));
     setIsLogged(true);
   }
 
