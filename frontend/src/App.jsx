@@ -1,7 +1,6 @@
 import { AuthProvider } from "./context/AuthContext";
 import HomePage from "./modules/home/HomePage";
 
-
 function App() {
   return (
     <AuthProvider>
