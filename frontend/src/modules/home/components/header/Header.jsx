@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react'
+import { useContext } from 'react'
 import { AuthContext } from '../../../../context/AuthContext'
 import { GoogleLogin } from '@react-oauth/google';
 import './header.scss'
@@ -6,9 +6,8 @@ export const Header = () => {
 
   const {
     user,
-    onSuccess,
+    logIn,
     onFailure,
-    clientID,
     isLogged,
     logOut
   } = useContext(AuthContext);
@@ -31,7 +30,7 @@ export const Header = () => {
           )
           : (
             <GoogleLogin
-              onSuccess={(e) => onSuccess(e)}
+              onSuccess={(data) => logIn(data)}
               onError={onFailure}
             />
           )

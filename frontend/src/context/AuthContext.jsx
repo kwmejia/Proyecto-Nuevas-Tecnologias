@@ -13,16 +13,13 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
 
-  const clientID = "935186823946-qcm7951fh404bcm76bn99to8v25i94s7.apps.googleusercontent.com";
-
   const loadInfo = () => {
     setUser(JSON.parse(localStorage.getItem('user')));
     setIsLogged(true);
   }
 
-  const onSuccess = (response) => {
+  const logIn = (response) => {
     const decoded = jwt_decode(response.credential);
-    console.log(decoded)
     setUser(decoded);
     localStorage.setItem("token", response.credential);
     localStorage.setItem("user", JSON.stringify(decoded));
@@ -44,9 +41,8 @@ export const AuthProvider = ({ children }) => {
       value={{
         user,
         setUser,
-        onSuccess,
+        logIn,
         onFailure,
-        clientID,
         isLogged,
         logOut
       }}
