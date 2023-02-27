@@ -1,7 +1,7 @@
 export const dbConfig = {
-  host: 'localhost',
+  host: 'database-veterinaria.csgjv8odblku.us-east-1.rds.amazonaws.com',
   port: '3306',
-  user: 'root',
-  password: '',
-  database: 'veterinariav2'
+  user: 'admin',
+  password: 'V3tD4l1#FAFA',
+  database: 'veterinaria_dali'
 }
