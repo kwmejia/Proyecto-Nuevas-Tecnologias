@@ -23,7 +23,7 @@ const getEmailsVeterinarianByEmail = (req, res) => {
         console.log(`SELECT * FROM correos_medicos WHERE cor_correo = ${cor_correo} `);
         res.json(err
           ? { err: "Error al obtener el correo del veterinario" }
-          : { data: rows }
+          : { data: rows[0] }
         );
       })
   });
