@@ -32,7 +32,7 @@ const postEmailsVeterinarian = (req, res) => {
     if (err) return res.send(err)
     const corCorreo = req.body.cor_correo
     const sql = 'INSERT INTO correos_medicos set ? ;'
-    conn.query(sql, [{ corCorreo }],
+    conn.query(sql, [{ cor_correo: corCorreo }],
       (err, rows) => {
         err && console.log('Err INSERT INTO  correos_medicos' + err)
         res.json(

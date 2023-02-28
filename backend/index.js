@@ -10,6 +10,7 @@ import conn from 'express-myconnection'
 import mysql from 'mysql2'
 import { dbConfig } from './src/config/connection.js'
 import { PORT } from './enviromentConfig.js'
+import specializationRouter from './src/routes/specialization.router.js'
 
 // settings
 const app = express()
@@ -27,6 +28,7 @@ app.use('/public', express.static(join(CURRENT_DIR, './uploads')))
 
 // Routes
 app.use('/api/emailsVeterinarian', emailsVeterinarian)
+app.use('/api/specializations', specializationRouter)
 
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en el puerto http://localhost:${PORT}`)
