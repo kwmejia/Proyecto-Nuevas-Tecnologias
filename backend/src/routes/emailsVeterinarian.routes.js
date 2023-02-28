@@ -1,14 +1,12 @@
-import express from "express";
+import express from 'express'
 import {
   getEmailsVeterinarianByEmail,
   getEmailsVeterinarian,
   postEmailsVeterinarian,
   deleteEmailVeterinarian
-} from "../controllers/emailsVeterinarian.controller.js";
+} from '../controllers/emailsVeterinarian.controller.js'
 
-
-
-const router = express.Router();
+const router = express.Router()
 
 /**
  * @swagger
@@ -24,7 +22,6 @@ const router = express.Router();
  *         cor_correo: correo@gmail.com
  */
 
-
 /**
  * @swagger
  * /api/emailsVeterinarian:
@@ -39,7 +36,7 @@ const router = express.Router();
  *            schema:
  *              type: array
  */
-router.get('/', getEmailsVeterinarian);
+router.get('/', getEmailsVeterinarian)
 
 /**
  * @swagger
@@ -62,7 +59,7 @@ router.get('/', getEmailsVeterinarian);
  *            schema:
  *              type: object
  */
-router.get('/:cor_correo', getEmailsVeterinarianByEmail);
+router.get('/:cor_correo', getEmailsVeterinarianByEmail)
 
 /**
  * @swagger
@@ -88,8 +85,7 @@ router.get('/:cor_correo', getEmailsVeterinarianByEmail);
  *        description: Some server error
  *
  */
-router.post('/', postEmailsVeterinarian);
-
+router.post('/', postEmailsVeterinarian)
 
 /**
  * @swagger
@@ -110,10 +106,6 @@ router.post('/', postEmailsVeterinarian);
  *            schema:
  *              type: object
  */
-router.delete('/:id', deleteEmailVeterinarian);
+router.delete('/:id', deleteEmailVeterinarian)
 
-
-
-
-
-export default router;
+export default router

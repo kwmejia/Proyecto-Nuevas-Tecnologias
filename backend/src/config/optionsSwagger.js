@@ -1,18 +1,20 @@
+import { PORT } from '../../enviromentConfig.js'
+
 const optionsSwagger = {
   definition: {
-    openapi: "3.0.0",
+    openapi: '3.0.0',
     info: {
-      title: "Tasks API",
-      version: "1.0.0",
-      description: "A simple express library API",
+      title: 'Tasks API',
+      version: '1.0.0',
+      description: 'A simple express library API'
     },
     servers: [
       {
-        url: "http://localhost:4000",
-      },
-    ],
+        url: `http://localhost:${PORT}`
+      }
+    ]
   },
-  apis: ["./src/routes/*.js"],
-};
+  apis: ['./src/routes/*.js']
+}
 
-export default optionsSwagger;
+export default optionsSwagger
