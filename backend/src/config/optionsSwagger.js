@@ -4,7 +4,7 @@ const optionsSwagger = {
   definition: {
     openapi: '3.0.0',
     info: {
-      title: 'Tasks API',
+      title: 'Veterinaria Dalí',
       version: '1.0.0',
       description: 'A simple express library API'
     },
