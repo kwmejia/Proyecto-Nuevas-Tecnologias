@@ -1,9 +1,9 @@
 import express from 'express'
 import {
-  getEmailsVeterinarianByEmail,
-  getEmailsVeterinarian,
-  postEmailsVeterinarian,
-  deleteEmailVeterinarian
+  getEmails,
+  getEmailByName,
+  postEmail,
+  deleteEmail
 } from '../controllers/emailsVeterinarian.controller.js'
 
 const router = express.Router()
@@ -36,7 +36,7 @@ const router = express.Router()
  *            schema:
  *              type: array
  */
-router.get('/', getEmailsVeterinarian)
+router.get('/', getEmails);
 
 /**
  * @swagger
@@ -59,7 +59,7 @@ router.get('/', getEmailsVeterinarian)
  *            schema:
  *              type: object
  */
-router.get('/:cor_correo', getEmailsVeterinarianByEmail)
+router.get('/:cor_correo', getEmailByName)
 
 /**
  * @swagger
@@ -85,7 +85,7 @@ router.get('/:cor_correo', getEmailsVeterinarianByEmail)
  *        description: Some server error
  *
  */
-router.post('/', postEmailsVeterinarian)
+router.post('/', postEmail)
 
 /**
  * @swagger
@@ -106,6 +106,6 @@ router.post('/', postEmailsVeterinarian)
  *            schema:
  *              type: object
  */
-router.delete('/:id', deleteEmailVeterinarian)
+router.delete('/:id', deleteEmail)
 
-export default router
+export default router;

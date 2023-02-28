@@ -24,8 +24,8 @@ export const AuthProvider = ({ children }) => {
   const logIn = async (response) => {
     try {
       let userData = jwt_decode(response.credential);
-      const { data: { data } } = await clientHTTP.get(`/emailsVeterinarian/${userData.email}`);
-      (data)
+      const res = await clientHTTP.get(`/emailsVeterinarian/${userData.email}`);
+      (!res.data.error)
         ? userData = { ...userData, rol: 'veterinario' }
         : userData = { ...userData, rol: 'cliente' };
 
@@ -38,6 +38,7 @@ export const AuthProvider = ({ children }) => {
     } catch (error) {
       setIsLogged(false);
       setAlert({ title: '!Oops ocurrio un error', icon: 'error' });
+      console.log(error)
     }
   }
 

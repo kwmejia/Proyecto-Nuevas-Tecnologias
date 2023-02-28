@@ -103,4 +103,4 @@ specializationRouter.post('/', postSpecialization)
 
 specializationRouter.delete('/:id', deleteSpecialization)
 
-export default specializationRouter
+export default specializationRouter;

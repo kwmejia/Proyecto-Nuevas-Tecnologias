@@ -10,7 +10,7 @@ import conn from 'express-myconnection'
 import mysql from 'mysql2'
 import { dbConfig } from './src/config/connection.js'
 import { PORT } from './enviromentConfig.js'
-import specializationRouter from './src/routes/specialization.router.js'
+import specializationRouter from './src/routes/specialization.routes.js'
 
 // settings
 const app = express()

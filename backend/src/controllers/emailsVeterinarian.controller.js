@@ -1,71 +1,35 @@
+import { EmailsVeterinarian } from "../models/EmailsVeterinarian.model.js"
+import response from "../helpers/response.js";
 
-const getEmailsVeterinarian = (req, res) => {
-  req.getConnection((_, conn) => {
-    conn.query('SELECT * FROM correos_medicos', (err, rows) => {
-      console.log(err ? 'Err SELECT * FROM correos_medicos' + err : 'Get correos succefull')
-      res.json(err
-        ? { err: 'Error al obtener los correos' }
-        : { data: rows }
-      )
-    })
+
+export function getEmails(req, res) {
+  req.getConnection(async (_, connection) => {
+    const data = await EmailsVeterinarian.getData(connection, res)
+    response(res, data);
   })
 }
 
-const getEmailsVeterinarianByEmail = (req, res) => {
-  req.getConnection((err, conn) => {
-    if (err) return res.send(err)
-    const corCorreo = req.params.cor_correo
-    conn.query(`SELECT * FROM correos_medicos WHERE cor_correo = "${corCorreo}" ;`,
-      (err, rows) => {
-        console.log(err ? 'Err SELECT * FROM correos_medicos' + err : 'Get email succefull')
-        console.log(`SELECT * FROM correos_medicos WHERE cor_correo = ${corCorreo} `)
-        res.json(err
-          ? { err: 'Error al obtener el correo del veterinario' }
-          : { data: rows[0] }
-        )
-      })
+
+export function getEmailByName(req, res) {
+  const { cor_correo } = req.params;
+  req.getConnection(async (_, connection) => {
+    const data = await EmailsVeterinarian.getDataByEmail(connection, cor_correo)
+    response(res, data, cor_correo);
   })
 }
 
-const postEmailsVeterinarian = (req, res) => {
-  req.getConnection((err, conn) => {
-    if (err) return res.send(err)
-    const corCorreo = req.body.cor_correo
-    const sql = 'INSERT INTO correos_medicos set ? ;'
-    conn.query(sql, [{ cor_correo: corCorreo }],
-      (err, rows) => {
-        err && console.log('Err INSERT INTO  correos_medicos' + err)
-        res.json(
-          err
-            ? { err: 'Error al insertar el correo de veterinario' }
-            : { msg: 'Correo insertado correctamente' }
-        )
-      }
-    )
+export function postEmail(req, res) {
+  const { cor_correo } = req.body;
+  req.getConnection(async (_, connection) => {
+    const data = await EmailsVeterinarian.postData(connection, cor_correo);
+    response(res, data, cor_correo);
   })
 }
 
-const deleteEmailVeterinarian = (req, res) => {
-  req.getConnection((err, conn) => {
-    if (err) return res.send(err)
-    const id = req.params.id
-    const sql = `DELETE FROM correos_medicos WHERE cor_id = ${id}`
-    conn.query(sql, [{ id }],
-      (err, rows) => {
-        err && console.log('Err DELETE FROM correos_medicos ' + err)
-        res.json(
-          err
-            ? { err: 'Error al eliminar el correo del veterinario' }
-            : { msg: 'Correo eliminado correctamente' }
-        )
-      }
-    )
-  })
-}
-
-export {
-  getEmailsVeterinarian,
-  getEmailsVeterinarianByEmail,
-  postEmailsVeterinarian,
-  deleteEmailVeterinarian
+export function deleteEmail(req, res) {
+  const { id } = req.params;
+  req.getConnection(async (_, connection) => {
+    const data = await EmailsVeterinarian.deleteData(connection, id);
+    response(res, data, id);
+  });
 }
