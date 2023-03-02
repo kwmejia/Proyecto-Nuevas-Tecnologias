@@ -1,0 +1,140 @@
+.cont-description {
+  margin-top: 80px;
+
+  .info-left-cont {
+
+    h2 {
+      font-size: 32px;
+      font-weight: bold;
+    }
+
+    p {
+      font-size: 18px;
+    }
+
+    .description-text {
+      font-weight: 600;
+    }
+
+  }
+
+  .info-right-cont {
+    overflow: hidden;
+
+    img {
+      object-fit: cover;
+      transition: .3s;
+      overflow: hidden;
+      cursor: pointer;
+
+
+      &:hover {
+        transform: scale(.9);
+      }
+    }
+  }
+
+
+  .cont-exp {
+    h2 {
+      font-weight: bold;
+    }
+
+    .left-cont {
+      width: 28%;
+      height: 100%;
+      justify-content: center;
+
+      .img-cont {
+        background-image: url('/img/anya-prygunova-IrQGaSa02V0-unsplash (2).jpg');
+        background-position: center;
+        background-size: cover;
+        width: 490px;
+        height: 460px;
+        position: relative;
+        transition: .3s;
+
+        &:hover {
+          transform: scale(.9);
+        }
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 100;
+          background: rgba(217, 217, 217, .5);
+        }
+      }
+    }
+
+    .right-cont {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      width: 70%;
+      justify-content: center;
+
+      .img-cont {
+        background-position: center;
+        background-size: cover;
+        width: 324px;
+        height: 224px;
+        position: relative;
+        transition: .3s;
+
+        &:hover {
+          transform: scale(.9);
+        }
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 100;
+          background: rgba(217, 217, 217, .5);
+        }
+      }
+
+      .img-cont:nth-child(1) {
+        background-image: url('/img/priscilla-du-preez-2hc6ocDAsNY-unsplash.jpg');
+      }
+
+      .img-cont:nth-child(2) {
+        background-image: url('/img/hayffield-l-ZVdZw2p08y4-unsplash.jpg');
+      }
+
+      .img-cont:nth-child(3) {
+        background-image: url('/img/ayla-verschueren-nWKMtmbpxQs-unsplash.jpg');
+      }
+
+      .img-cont:nth-child(4) {
+        background-image: url('/img/werzk-luuuuuuu-tDlo2ZPlQlU-unsplash.jpg');
+      }
+    }
+  }
+
+}
+
+
+@media (max-width:1366px) {
+  .img-cont {
+    width: 340px !important;
+  }
+}
+
+
+@media (max-width:991px) {
+
+  .right-cont,
+  .left-cont {
+    width: 100%;
+  }
+
+}

@@ -1,0 +1,23 @@
+.container-header {
+  width: 100%;
+  height: 60px;
+  background: rgba(140, 140, 140, .41);
+  position: fixed;
+  z-index: 999999;
+
+  .nav-items {
+    a {
+      color: #FFFFFF;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 20px;
+      transition: .3s;
+
+      &:hover,
+      &.active {
+        color: #F996BA;
+        text-shadow: 1px 1px 1px #000;
+      }
+    }
+  }
+}

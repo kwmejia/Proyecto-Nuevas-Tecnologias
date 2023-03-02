@@ -1,0 +1,57 @@
+@import '../../../assets/scss/base/varibles';
+
+.cont-banner {
+  display: flex;
+  width: 100vw;
+
+  .cont-item-carousel {
+    height: 70vh;
+    width: 100vw;
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    .cont-img {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+    }
+
+    .cont-img:nth-child(1) {
+      background-image: url('/img/xennie-moore-_Fk0y6N5SGQ-unsplash (1).jpg');
+      background-position: 0 -100px;
+      background-size: cover;
+    }
+
+    .cont-img:nth-child(2) {
+      background-image: url('/img/fatty-corgi-EpRAM95thHU-unsplash.jpg');
+      background-position: 0 -100px;
+      background-size: cover;
+    }
+
+
+    img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .description-item {
+      position: relative;
+      z-index: 200;
+      font-size: 54px;
+      color: $white;
+      font-weight: bold;
+      margin-left: 10%;
+      text-shadow: 2px 2px 1px #000;
+    }
+
+    .description-item-center {
+      @extend .description-item;
+      margin-left: 0px;
+      margin-bottom: 10%;
+    }
+  }
+}
