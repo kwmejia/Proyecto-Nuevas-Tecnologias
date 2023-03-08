@@ -1,0 +1,39 @@
+.cont-quienes-somos{
+    .imagen{
+        object-fit: cover;
+        transition: .3s;
+        overflow: hidden;
+        cursor: pointer;
+  
+  
+        &:hover {
+          transform: scale(.9);
+        }
+    }
+
+    .quienes-somos{
+        .title-pink{
+            color: #F996BA;
+            padding-left: 12px;
+        }
+    }
+    
+    .cont-mision{
+        .title-pink-dos{
+            color: #F996BA;
+            padding-right: 12px;
+        }
+
+        .text-mision{
+            width: 509px;
+            height: 157px;
+        }
+    }
+   
+    .cont-vision{
+        .title-pink-vision{
+            color: #F996BA;
+            padding-left: 12px;
+        }
+    }
+}
