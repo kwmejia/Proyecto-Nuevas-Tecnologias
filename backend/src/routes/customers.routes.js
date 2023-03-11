@@ -47,7 +47,7 @@ const customerRouter = express.Router();
  *    tags: [clientes]
  *    responses:
  *      200:
- *        description: Lista de todos los clientes clientes
+ *        description: Lista de todos los clientes
  *        content:
  *          application/json:
  *            schema:
