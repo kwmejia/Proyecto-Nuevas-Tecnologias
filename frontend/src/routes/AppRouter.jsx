@@ -6,12 +6,14 @@ const Description = lazy(() => import('../modules/home/components/description/De
 const Services = lazy(() => import('../modules/home/components/services/Services'));
 const Contact = lazy(() => import('../modules/home/components/contact/Contact'));
 const About = lazy(() => import('../modules/home/components/about/About'));
+const NotFoundPage = lazy(() => import('../modules/shared/notFoundPage/NotFoundPage'));
+
 
 export const AppRouter = () => {
   return (
     <>
       <Routes>
-        <Route path="*" element={<h1>Pagina no encontrada</h1>} />
+        <Route path="*" element={<NotFoundPage/>} />
         <Route path="/" element={<LandingPage />}>
           <Route index element={<Description />} />
           <Route path="servicios" element={<Services />} />
