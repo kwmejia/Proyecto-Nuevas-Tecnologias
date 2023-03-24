@@ -50,17 +50,47 @@ const Services = () => {
       {/* fin bloque 2 */}
 
       <div className='bloque-3 mt-5'>
-        <div className='cont-anestesia d-flex flex-row'>
-          <img src="\img\img-gal-2-anestesia-petshop-animal.jpg" alt="" width={743} height={250} />
 
-          <div className='d-flex flex-column justify-content-center align-items-center'>
+        <div className='cont-anestesia d-flex flex-row'>
+          <div className="w-50">
+          <img className='imagenes-servicios' src="\img\img-gal-2-anestesia-petshop-animal.jpg" width={"100%"}/>
+          </div>
+          <div className='w-50 p-2 d-flex flex-column justify-content-center align-items-center'>
             <p className='fw-bold fs-4'>Anestesía</p>
             <p className='caja-texto text-center '>Todos nuestros procedimientos quirúrgicos se realizan en compañía de una Anestesióloga Veterinaria, la cual bajo su experiencia </p>
           </div>
         </div>
 
-        <div>
+        <div className='cont-cirugias d-flex flex-row'>
+          
+          <div className='w-50 d-flex flex-column justify-content-center align-items-center'>
+            <p className='fw-bold fs-4'>Cirugías</p>
+            <p className='caja-texto text-center'>Nuestro equipo de trabajo cuenta con experiencia en la realización de cualquier tipo de cirugías generales o especializadas según el caso de tu mascota. </p>
+          </div>
+          <div className="w-50">
+            <img className='imagenes-servicios' width={"100%"} src="\img\img-gal-3-cirugia-petshop-animal.jpg" />
+          </div>
 
+        </div>
+        
+        <div className='cont-imagenologia d-flex flex-row'> 
+          <div className="w-50">
+            <img className='imagenes-servicios' width={"100%"} src="\img\img-gal-3-imagenologia-petshop-animal.jpg"  />
+          </div>
+          <div className='w-50 d-flex flex-column justify-content-center align-items-center'>
+            <p className='fw-bold fs-4'>Imagenología</p>
+            <p className='caja-texto text-center '>Contamos con equipos de alta tecnología y personal idóneo para la toma y estudio de diferentes exámenes:</p>
+          </div>
+        </div>
+
+        <div className='cont-hospitalizacion d-flex flex-row'> 
+          <div className='w-50 d-flex flex-column justify-content-center align-items-center'>
+            <p className='fw-bold fs-4'>Hospitalización</p>
+            <p className='caja-texto text-center '>Nuestras Instalaciones están 100% adecuadas para prestar un servicio de calidad, cumpliendo las normas de higiene y protocolos establecidos. .</p>
+          </div>
+          <div className="w-50">
+            <img className='imagenes-servicios'  width={"100%"}  src="\img\img-gal-5-hospitalizacion-petshop-animal.jpg" />
+          </div>
         </div>
 
       </div>

@@ -24,13 +24,25 @@ $general: #F996BA;
         color: #F996BA;
         margin-right: 10px;
     }
+
+    img {
+
+        transition: .3s ease-in-out;
+        cursor: pointer;
+        &:hover {
+            transform: scale(.9);
+        }
+    }
     
 }
 
 .bloque-3{
     background-color: #F996BA;
     color: white;
+    padding: 0 !important; 
+
     img{
+        height: 300px;
         object-fit: cover;
     }
 
