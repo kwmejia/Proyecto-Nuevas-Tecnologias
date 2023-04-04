@@ -1,7 +1,7 @@
-import axios from 'axios';
+import axios from 'axios'
 
-const baseURL = "http://localhost:4000/api";
+const baseURL = 'http://localhost:4000/api'
 
-const clientHTTP = axios.create({ baseURL });
+const clientHTTP = axios.create({ baseURL })
 
-export default clientHTTP;
+export default clientHTTP

@@ -13,6 +13,7 @@ import optionsSwagger from './src/config/optionsSwagger.js'
 import specializationRouter from './src/routes/specialization.routes.js'
 import customerRouter from './src/routes/customers.routes.js'
 import petRouter from './src/routes/pets.routes.js'
+import mailerRouter from './src/routes/mailer.routes.js'
 
 // settings
 const app = express()
@@ -33,6 +34,7 @@ app.use('/api/emailsVeterinarian', emailsVeterinarian)
 app.use('/api/specializations', specializationRouter)
 app.use('/api/customers', customerRouter)
 app.use('/api/pets', petRouter)
+app.use('/api/mailer', mailerRouter)
 
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en el puerto http://localhost:${PORT}`)
